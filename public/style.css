@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Tahoma, Verdana, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+}
+
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 16px;
+}
+
+h1 {
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  margin-top: 0;
+  color: #555;
+}
+
+.message {
+  background: #d8f5d0;
+  border: 1px solid #93ca8b;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 4px;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+}
+
+button {
+  margin-top: 12px;
+  border: 0;
+  background: #0056b3;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #00408a;
+}
+
+.movies-list {
+  padding-left: 18px;
+}
+
+.movies-list li {
+  margin-bottom: 8px;
+}

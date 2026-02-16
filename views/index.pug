@@ -1,0 +1,70 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/style.css')
+  body
+    .container
+      h1 Movies App
+      p.subtitle Mongoose + Express + Pug
+
+      if message
+        p.message= message
+
+      .card
+        h2 Add New Movie
+        form(action='/movies/add', method='POST')
+          label(for='title') Title
+          input#title(type='text', name='title', required)
+
+          label(for='year') Year
+          input#year(type='number', name='year', min='1888', required)
+
+          label(for='rating') Rating
+          select#rating(name='rating', required)
+            option(value='') Select rating
+            each option in ratingOptions
+              option(value=option)= option
+
+          button(type='submit') Add Movie
+
+      .card
+        h2 Update Movie Rating
+        form(action='/movies/update-rating', method='POST')
+          label(for='movieTitle') Choose movie
+          select#movieTitle(name='title', required)
+            option(value='') Select movie
+            each movie in movies
+              option(value=movie.title)= `${movie.title} (${movie.year})`
+
+          label(for='newRating') New rating
+          select#newRating(name='newRating', required)
+            option(value='') Select rating
+            each option in ratingOptions
+              option(value=option)= option
+
+          button(type='submit') Update Rating
+
+      .card
+        h2 Delete Movies By Rating
+        form(action='/movies/delete-by-rating', method='POST')
+          label(for='ratingToDelete') Select rating to delete
+          select#ratingToDelete(name='ratingToDelete', required)
+            option(value='') Select rating
+            each option in ratingOptions
+              option(value=option)= option
+
+          button(type='submit') Delete Movies
+
+      .card
+        h2 Movies List
+        if movies.length
+          ul.movies-list
+            each movie in movies
+              li
+                strong= movie.title
+                |  - Year: #{movie.year}, Rating: #{movie.rating}
+        else
+          p No movies found.
