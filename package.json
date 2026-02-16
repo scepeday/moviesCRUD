@@ -1,0 +1,21 @@
+{
+  "name": "moviescrud",
+  "version": "1.0.0",
+  "description": "Simple movies CRUD app with Express, Mongoose and Pug",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.1",
+    "pug": "^3.0.3"
+  }
+}
